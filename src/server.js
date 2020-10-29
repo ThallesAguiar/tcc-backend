@@ -45,4 +45,5 @@ const db = mongoose.connection;
 db.on('error', (err) => console.log(err));
 db.once('open', () => console.log('Database connected!'));
 
-server.listen(process.env.PORT || 3333, () => console.log(`🚀Executando em http://localhost:${process.env.PORT}`));
+// server.listen(process.env.PORT || 3333, () => console.log(`🚀Executando em http://localhost:${process.env.PORT}`));//local
+server.listen(process.env.PORT || 3333);
