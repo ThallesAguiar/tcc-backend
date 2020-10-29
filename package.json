@@ -17,10 +17,10 @@
     "yup": "^0.29.1",
     "socket.io": "^2.3.0",
     "vue-socket.io": "^3.0.10",
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
   }
 }
