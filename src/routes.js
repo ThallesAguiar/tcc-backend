@@ -16,14 +16,13 @@ const DislikeController = require('./app/controller/DislikeController');
 // importando middlewares
 const authMiddleware = require('./app/middlewares/auth');
 
-routes.get('/', (req, res) => {
-    return res.json("Bem vindo a API do matchê!");
-});
-
 const routes = new Router();
 const upload = multer(multerConfig);
 
 
+routes.get('/', (req, res) => {
+    return res.status(200).json("Bem-vindo a API do matchê!");
+});
 
 routes.post('/sessions', SessionController.store);
 routes.post('/users', UserController.store);
