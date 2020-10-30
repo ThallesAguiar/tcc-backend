@@ -21,7 +21,7 @@ class SessionController {
             .populate({
                 path: 'id_avatar',
                 model: 'File',
-                select: ['_id', 'path', 'url']
+                select: ['_id', 'url']
             })
             .populate({
                 path: 'id_address',

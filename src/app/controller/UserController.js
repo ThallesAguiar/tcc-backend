@@ -93,7 +93,7 @@ class UserController {
             .populate({
                 path: 'id_avatar',
                 model: 'File',
-                select: ['_id', 'path', 'url']
+                select: ['_id', 'url']
             });
 
         return res.json({
@@ -130,7 +130,7 @@ class UserController {
             .populate({
                 path: 'id_avatar',
                 model: 'File',
-                select: ['_id', 'path', 'url']
+                select: ['_id', 'url']
             });
 
         return res.json(users);

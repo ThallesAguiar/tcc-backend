@@ -47,11 +47,12 @@ routes.post('/users/:likeIdUser/dislikes', DislikeController.store);
 /**PUTs */
 routes.put('/users', UserController.update);
 routes.put('/address', AddressController.update);
-routes.put('/files', upload.single('file'), FileController.update);
+routes.put('/files/:id', upload.single('file'), FileController.update);
 
 
 
 /**DELETEs */
+routes.delete('/files/:id', FileController.delete);
 
 // routes.get('/providers/:providerId/available', AvailableController.index);
 
