@@ -16,6 +16,9 @@ const DislikeController = require('./app/controller/DislikeController');
 // importando middlewares
 const authMiddleware = require('./app/middlewares/auth');
 
+routes.get('/', (req, res) => {
+    return res.json("Bem vindo a API do matchê!");
+});
 
 const routes = new Router();
 const upload = multer(multerConfig);
