@@ -9,6 +9,7 @@ const SessionController = require('./app/controller/SessionController');
 const FileController = require('./app/controller/FileController');
 const ProviderController = require('./app/controller/ProviderController');
 const AddressController = require('./app/controller/AddressController');
+const CoordinatesController = require('./app/controller/CoordinatesController');
 const LikeController = require('./app/controller/LikeController');
 const DislikeController = require('./app/controller/DislikeController');
 
@@ -49,6 +50,7 @@ routes.post('/users/:likeIdUser/dislikes', DislikeController.store);
 /**PUTs */
 routes.put('/users', UserController.update);
 routes.put('/address', AddressController.update);
+routes.put('/coordinates/:id', CoordinatesController.update);
 routes.put('/files/:id', upload.single('file'), FileController.update);
 
 

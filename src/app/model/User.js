@@ -36,6 +36,12 @@ const userSchema = new Schema({
     status: {
         type: String,
         default: null,
+        allowNull: true,
+    },
+    bio:{
+        type: String,
+        default: null,
+        allowNull: true,
     },
     likes: [{
         type: Schema.Types.ObjectId,
@@ -58,11 +64,13 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'File',
         default: null,
+        allowNull: true,
     },
     id_address: {
         type: Schema.Types.ObjectId,
         ref: 'Address',
         default: null,
+        allowNull: true,
     },
 },
     {

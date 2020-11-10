@@ -57,7 +57,7 @@ class UserController {
             // confirma se as senhas são iguais. ref faz referencia a variavel password
         })
         if (!(await schema.isValid(req.body))) {
-            return res.status(400).json({ error: 'Validation fails' })
+            return res.status(400).json({ error: 'Validation fails' });
         }
 
         const { email, oldPassword } = req.body
@@ -66,10 +66,10 @@ class UserController {
         const user = await userModel.findById(req.userId)
 
         if (email !== user.email) {
-            const userExists = await userModel.findOne({ email: req.body.email })
+            const userExists = await userModel.findOne({ email: req.body.email });
 
             if (userExists) {
-                return res.status(400).json({ error: "User already exists" })
+                return res.status(400).json({ error: "User already exists" });
             }
         }
 
@@ -78,10 +78,10 @@ class UserController {
             const valid = await bcrypt.compare(oldPassword, user.password)
 
             if (!valid)
-                return res.status(401).json({ error: 'Password does not match' })
+                return res.status(401).json({ error: 'Password does not match' });
 
             //criptografa a NOVA senha 
-            req.body.password = await bcrypt.hash(req.body.password, 10)
+            req.body.password = await bcrypt.hash(req.body.password, 10);
         }
 
         const { _id, name, provider, birthday, gender, phone, status, id_address, id_avatar } = await userModel.findByIdAndUpdate(user._id, req.body, { new: true })

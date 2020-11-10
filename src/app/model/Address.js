@@ -3,24 +3,24 @@ const { Schema, model } = require("mongoose");
 const addressScrema = new Schema({
     country: {
         type: String,
-        allowNull: false,
+        allowNull: true,
         default: null,
     },
     state: {
         type: String,
-        allowNull: false,
+        allowNull: true,
         default: null,
     },
     city: {
         type: String,
-        allowNull: false,
+        allowNull: true,
         default: null,
     },
-    latitude: {
+    lat: {
         type: Number,
         default: null,
     },
-    longitude: {
+    lng: {
         type: Number,
         default: null
     },
